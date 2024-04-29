@@ -18,6 +18,8 @@
 		<java.version>17</java.version>
         <!--dependecy management configuration-->
 		<maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
+		<!--code formatter-->
+		<formatter-maven-plugin.version>2.23.0</formatter-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -68,7 +70,22 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<!--code formatter-->
+			<plugin>
+				<groupId>net.revelc.code.formatter</groupId>
+				<artifactId>formatter-maven-plugin</artifactId>
+				<version>${formatter-maven-plugin.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
